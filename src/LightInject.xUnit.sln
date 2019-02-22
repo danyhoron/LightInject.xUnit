@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightInject.xUnit2", "LightInject.xUnit2\LightInject.xUnit2.csproj", "{DE0600B4-748C-4FB9-AFDA-342AA9568F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightInject.xUnit.core", "LightInject.xUnit2\LightInject.xUnit.core.csproj", "{DE0600B4-748C-4FB9-AFDA-342AA9568F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightInject.xUnit2.Tests", "LightInject.xUnit2.Tests\LightInject.xUnit2.Tests.csproj", "{226E9BB1-C20D-4A25-9BFF-7BA4D9EC4997}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightInject.xUnit.core.Tests", "LightInject.xUnit2.Tests\LightInject.xUnit.core.Tests.csproj", "{226E9BB1-C20D-4A25-9BFF-7BA4D9EC4997}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DE0600B4-748C-4FB9-AFDA-342AA9568F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +41,11 @@ Global
 		{226E9BB1-C20D-4A25-9BFF-7BA4D9EC4997}.Release|x64.Build.0 = Release|Any CPU
 		{226E9BB1-C20D-4A25-9BFF-7BA4D9EC4997}.Release|x86.ActiveCfg = Release|Any CPU
 		{226E9BB1-C20D-4A25-9BFF-7BA4D9EC4997}.Release|x86.Build.0 = Release|Any CPU
-	EndGlobalSection	
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35ED731C-062B-4BEE-BB10-D1412CAE3BA2}
+	EndGlobalSection
 EndGlobal

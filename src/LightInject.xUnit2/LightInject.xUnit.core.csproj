@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>LightInject.xUnit.core</PackageId>
+    <Authors>Daniel Horon</Authors>
+    <Company />
+    <Product>LightInject.xUnit.core</Product>
+    <Description>.net core port of LightInject.xUnit 
+https://github.com/seesharper/LightInject.xUnit</Description>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/danyhoron/LightInject.xUnit</RepositoryUrl>
+    <PackageTags>lightinject, xunit</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="LightInject" Version="5.4.0" />
+    <PackageReference Include="xunit.abstractions" Version="2.0.3" />
+    <PackageReference Include="xunit.core" Version="2.4.1" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+    <PackageReference Include="xunit.extensibility.execution" Version="2.4.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
+  </ItemGroup>
+</Project>
