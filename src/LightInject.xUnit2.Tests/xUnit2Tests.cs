@@ -94,10 +94,10 @@ namespace LightInject.xUnit2.Tests
 
 
         internal static void Configure(IServiceContainer container)
-        {            
+        {
             container.Register<IFoo, Foo>();
             container.Register<IBar, Bar>();
-            container.Register<ICalculator, Calculator>();            
+            container.Register<ICalculator, Calculator>();
         }
     }
 
@@ -123,9 +123,9 @@ namespace LightInject.xUnit2.Tests
             else
             {
                 Assert.IsType<Foo>(foo);
-            }                       
+            }
         }
-        
+
         internal static void Configure(IServiceContainer container)
         {
             container.Register<IFoo, Foo>();
@@ -134,7 +134,7 @@ namespace LightInject.xUnit2.Tests
 
     public class XunitTestsWithInheritedTestMethod : XunitBaseClassWithTest
     {
-        internal static void Configure(IServiceContainer container)
+        internal static new void Configure(IServiceContainer container)
         {
             container.Register<IFoo, AnotherFoo>();
         }
@@ -193,7 +193,7 @@ namespace LightInject.xUnit2.Tests
     {
         public void MethodWithMissingDependency(IFoo foo)
         {
-            
+
         }
 
         [Fact]
@@ -226,5 +226,5 @@ namespace LightInject.xUnit2.Tests
         }
     }
 
-    
+
 }

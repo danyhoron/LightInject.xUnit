@@ -116,7 +116,6 @@ namespace LightInject.xUnit2
         /// <summary>
         /// This method is only executed when the test app domains are unloaded.
         /// </summary>
-        [ExcludeFromCodeCoverage]
         private static void EndAllScopes()
         {
             foreach (var container in Containers.Values)

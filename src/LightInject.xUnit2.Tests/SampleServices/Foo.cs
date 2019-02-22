@@ -24,7 +24,7 @@ namespace LightInject.SampleLibrary
     }
 
     public class FooWithCompilerGeneratedType : IFoo
-    {      
+    {
         public Func<string> SomeAction
         {
             get
@@ -68,16 +68,16 @@ namespace LightInject.SampleLibrary
     public class Foo : IFoo
     {
         public static int Instances { get; set; }
-        
+
         public Foo()
-        {           
+        {
             Instances++;
         }
     }
 
     public class DerivedFoo : Foo
     {
-        
+
     }
 
 
@@ -88,10 +88,10 @@ namespace LightInject.SampleLibrary
 
     public class FooMock : IFoo
     {
-        
+
     }
 
-    public class FooMock<T> : IFoo<T>{}
+    public class FooMock<T> : IFoo<T> { }
 
 
     public class AnotherFoo : IFoo { }
@@ -116,9 +116,9 @@ namespace LightInject.SampleLibrary
         public IBar Bar { get; private set; }
     }
 
-   
 
-    
+
+
 
     public class FooWithEnumerableIFooDependency : IFoo
     {
@@ -129,7 +129,7 @@ namespace LightInject.SampleLibrary
             FooList = fooList;
         }
     }
-    
+
     public class FooWithEnumerableAndRegularDependency : IFoo
     {
         public IEnumerable<IBar> Bars { get; private set; }
@@ -177,7 +177,7 @@ namespace LightInject.SampleLibrary
             }
         }
     }
-    
+
     public class FooWithSampleServiceDependency : IFoo
     {
         public FooWithSampleServiceDependency(IBar bar, ISampleService sampleService)
@@ -200,7 +200,7 @@ namespace LightInject.SampleLibrary
         public ISampleService SampleService { get; private set; }
     }
 
-    
+
 
 
     public class FooWithSamePropertyDependencyTwice : IFoo
@@ -262,7 +262,7 @@ namespace LightInject.SampleLibrary
     {
         [ThreadStatic]
         public static int Instances;
-        
+
         public BarDecorator(IBar bar)
         {
             Instances++;
@@ -271,7 +271,7 @@ namespace LightInject.SampleLibrary
 
 
     public class FooDecoratorWithDependency : IFoo
-    {        
+    {
         public FooDecoratorWithDependency(IFoo foo, IBar bar)
         {
             Foo = foo;
@@ -469,7 +469,7 @@ namespace LightInject.SampleLibrary
     public class FooWithEnumerablePropertyDependency : IFoo
     {
         public FooWithEnumerablePropertyDependency()
-        {            
+        {
         }
 
         public IEnumerable<IBar> Bars { get; set; }
@@ -498,13 +498,13 @@ namespace LightInject.SampleLibrary
     public class AnotherFoo<T> : IFoo<T> { }
 
     public class FooWithGenericDependency<T> : IFoo<T>
-    {        
+    {
         public FooWithGenericDependency(T dependency)
         {
             Dependency = dependency;
         }
 
-        public T Dependency { get; private set; }        
+        public T Dependency { get; private set; }
     }
 
     public class FooWithOpenGenericDependency<T> : IFoo<T>
@@ -552,8 +552,8 @@ namespace LightInject.SampleLibrary
     }
 
 
-    public class FooWithStringTypeParameter : IFoo<string> {}
-    
+    public class FooWithStringTypeParameter : IFoo<string> { }
+
 
     public class FooWithLazyDependency : IFoo
     {
@@ -586,7 +586,7 @@ namespace LightInject.SampleLibrary
             }
             set
             {
-                
+
             }
         }
     }
@@ -611,9 +611,9 @@ namespace LightInject.SampleLibrary
         public IBar Bar { get; private set; }
     }
 
-    
 
-   
+
+
     public class FooWithProperyDependency : IFoo
     {
         public IBar Bar { get; set; }
@@ -625,9 +625,9 @@ namespace LightInject.SampleLibrary
     }
 
 
-    public class FooWithInheritedProperyDepenency : FooWithProperyDependency {}
+    public class FooWithInheritedProperyDepenency : FooWithProperyDependency { }
 
-    
+
 
     public class FooWithFuncDependency : IFoo
     {
@@ -635,7 +635,7 @@ namespace LightInject.SampleLibrary
         {
             GetBar = getBar;
         }
-        public Func<IBar> GetBar { get; private set; } 
+        public Func<IBar> GetBar { get; private set; }
     }
 
     public class FooWithNamedFuncDependency : IFoo
@@ -644,7 +644,7 @@ namespace LightInject.SampleLibrary
         {
             GetBar = getBar;
         }
-        public Func<string,IBar> GetBar { get; private set; }
+        public Func<string, IBar> GetBar { get; private set; }
     }
 
     public class FooWithCustomFuncDependency : IFoo
@@ -660,16 +660,16 @@ namespace LightInject.SampleLibrary
     public class DisposableFoo : IFoo, IDisposable
     {
         public bool IsDisposed { get; private set; }
-        
+
         public void Dispose()
         {
-            IsDisposed = true;            
+            IsDisposed = true;
         }
     }
 
     public class ConcreteFoo
     {
-        
+
     }
 
     public class ConcreteFooWithBaseClass : Foo
@@ -712,7 +712,7 @@ namespace LightInject.SampleLibrary
 
     internal class InternalFooWithPublicConstructor : IFoo
     {
-        public InternalFooWithPublicConstructor () {}
+        public InternalFooWithPublicConstructor() { }
     }
 
     internal class InternalFooWithInternalConstructor : IFoo
@@ -757,28 +757,28 @@ namespace LightInject.SampleLibrary
     }
 
 
-    public abstract class AbstractFoo : IFoo {}
-    
+    public abstract class AbstractFoo : IFoo { }
+
 
     public class FooWithNestedPrivate : IFoo
     {
         private class NestedPrivateBar
         {
-            
+
         }
     }
 
-    public class FooWithGenericConstraint<T> : IFoo<T> where T:IBar
+    public class FooWithGenericConstraint<T> : IFoo<T> where T : IBar
     {
-        
+
     }
 
-    public interface IFooWithGenericInterfaceConstraint<T,I> where T: IBar<I>
+    public interface IFooWithGenericInterfaceConstraint<T, I> where T : IBar<I>
     {
-        
+
     }
 
-    public class FooWithGenericInterfaceConstraint<T,I> : IFooWithGenericInterfaceConstraint<T, I>
+    public class FooWithGenericInterfaceConstraint<T, I> : IFooWithGenericInterfaceConstraint<T, I>
         where T : IBar<I>
     {
     }
@@ -809,11 +809,11 @@ namespace LightInject.SampleLibrary
         { }
     }
 
-    
+
     public class DisposableLifetime : ILifetime, IDisposable
     {
         public bool IsDisposed { get; set; }
-        
+
         public void Dispose()
         {
             IsDisposed = true;
@@ -825,5 +825,5 @@ namespace LightInject.SampleLibrary
         }
     }
 
-    
+
 }
